@@ -5,6 +5,6 @@ services:
         restart: always
         command: python manage.py runserver 0.0.0.0:8000
         volumes:
-            - ./django-ribbit/:/website
+            - ./sergio-qlo/:/website
         ports:
             - "8000:8000"
