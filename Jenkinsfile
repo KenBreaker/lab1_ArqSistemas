@@ -3,12 +3,12 @@ node {
 		git 'https://github.com/KenBreaker/lab1_ArqSistemas'
 	}
 	stage('Build container') {
-		bat './bat_files/buildContainer.bat'
+		sh './bat_files/buildContainer.sh'
 	}
 	//stage('Push to my repo') {
-	//	bat './bat_files/pushToRepo.bat'
+	//	sh './bat_files/pushToRepo.sh'
 	//}
 	stage('Push to Heroku') {
-		bat './bat_files/pushToHeroku.bat'
+		sh './bat_files/pushToHeroku.sh'
 	}
 }
