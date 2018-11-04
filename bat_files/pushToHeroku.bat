@@ -1,7 +1,6 @@
 cd django-ribbit
-docker login
 heroku login
-heroku container: push web
-heroku container:release web
-heroku open
+docker login
+heroku container:login
+heroku container:push web --app dockeribbit
 cd ..
