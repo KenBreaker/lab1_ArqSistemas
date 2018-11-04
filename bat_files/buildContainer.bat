@@ -1,4 +1,3 @@
-cd ..
-cd django-ribbit
-docker build .
+cd sergio-qlo
+docker-compose up -d
 cd ..
