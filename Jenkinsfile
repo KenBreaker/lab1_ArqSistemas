@@ -1,11 +1,11 @@
 node {
 	stage('Pull from original GitHub repo') {
-		git 'https://github.com/KenBreaker/lab1_ArqSistemas'
+		git 'https://github.com/VicenteBarria/lab1_ArqSistemas'
 	}
 	stage('Build container') {
-		bat './buildContainer.bat'
+		bat './bat_files/buildContainer.bat'
 	}
 	//stage('Push to my repo') {
-	//	sh './bat_files/pushToRepo.sh'
+	//	bat './bat_files/pushToRepo.bat'
 	//}
 }
