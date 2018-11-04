@@ -1,11 +1,11 @@
-from python:2
+FROM python:2
 
-workdir /ribbit
+ENV PYTHONUNBUFFERED 1
 
-copy . /ribbit
+WORKDIR /website
 
-run pip install -r requeriments.txt
-run python manage.py syncdb --noinput
-run python manage.py migrate ribbit_app
+COPY . /website
 
-cmd python manage.py runserver 0:$PORT
+RUN pip install -r requirements.txt
+RUN python manage.py syncdb --noinput 
+RUN python manage.py migrate ribbit_app

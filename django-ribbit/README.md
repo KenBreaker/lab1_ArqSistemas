@@ -10,18 +10,35 @@ A live demo of the app can be found at http://vast-earth-7154.herokuapp.com/
 To set the application locally, first clone the repo
 
 ```  
-https://gitlab.com/Choapinus/t1_arqsist.git
-(original: git clone https://github.com/gnarula/django-ribbit.git)
+git clone https://github.com/gnarula/django-ribbit.git
 ```
 
-Build the image with docker
+Make a virtual environment
 
 ```
-docker build -t my_image_name .
+virtualenv --no-site-packages ribbit_env
 ```
   
-With the image created, start the container and bind the ports
+With the the virtual environment activated, install the dependencies
 
 ```
-docker run -d -p 8080:8080 --name my_container_name my_image_name
+pip install Django South
+```
+  
+Next, `cd` into the repository and run the `syncdb` command to create the tables and superuser account
+
+```
+python manage.py syncdb
+```
+
+Then, apply the migrations
+
+```
+python manage.py migrate ribbit_app
+```
+  
+Finally, start the development server to preview the application
+
+```
+python manage.py runserver
 ```
