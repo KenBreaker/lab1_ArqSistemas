@@ -1,5 +1,5 @@
 pipeline {
     stage('Test') {
-                docker 'build -t test .''
+                docker 'build -t test .'
     }
 }
