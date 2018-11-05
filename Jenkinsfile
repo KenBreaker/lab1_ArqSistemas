@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo 'hello mudafuka'
                 bat 'python --version'
             }
         }
