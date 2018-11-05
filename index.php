@@ -1,3 +1,3 @@
 <?php
-header("Location: http://www.domain.com/home.html");
+header("Location: http://www.picopalquelee.herokuapp.com/home.html");
 ?>
