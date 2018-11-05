@@ -1,5 +1,9 @@
 pipeline {
-    stage('Test') {
-                docker 'build -t test .'
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                echo 'hello mudafuka'
+            }
+        }
     }
-}
