@@ -6,7 +6,6 @@ WORKDIR /website
 
 COPY . /website
 
-RUN pip install -r requirements.txt
-RUN python manage.py syncdb --noinput
-RUN python manage.py migrate ribbit_app
-CMD python manage.py runserver 0.0.0.0:8000
+RUN pip install -r requirements.txt \
+	&& python manage.py syncdb --noinput \
+	&& python manage.py migrate ribbit_app
