@@ -1,9 +1,8 @@
 pipeline {
-    agent { dockerfile true }
     stages {
         stage('Test') {
             steps {
-                dir
+                docker build -t test .
             }
         }
     }
